@@ -63,41 +63,6 @@ footer {
       display: block;
     }
 
-.side {
-  position: fixed;
-  font-size: 16px;
-  z-index: 10;
-  white-space: nowrap;
-}
-
-.side.left {
-  left: 5px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: center center;
-  text-align: left;
-}
-
-.side.right {
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  transform-origin: center center;
-  text-align: right;
-}
-
-/* Mobile: readable, horizontally aligned, centered vertically */
-@media (max-width: 700px) {
-  .side {
-    transform: translateY(-50%) rotate(0deg); /* remove rotation */
-    font-size: 12px;
-    white-space: normal;
-  }
-  
-  .side.left { left: 5px; right: auto; top: 50%; }
-  .side.right { right: 5px; left: auto; top: 50%; }
-}
-
     footer {
         bottom: 10px;
        padding: 0px;
@@ -126,13 +91,15 @@ footer {
   <h1>kaysl</h1>
 </header>
 
-<div class="side left">Visual creator based in Switzerland</div>
-<div class="side right">Art direction, graphic design & illustration</div>
-
-
-
-
-
+<section class="intro">
+    <p>
+    Visual creator based in Switzerland.<br>
+    Art direction, graphic design and illustration.<br>
+    Currently juggling life-work balance with two young toddlers, my hands are full.<br>
+    But my fingers are itching for a next new challenge!<br>
+    <a href="mailto:contact@kaysl.ch">Get in touch!</a><br>
+    </p>
+</section>
 
 <footer>
   
@@ -144,12 +111,12 @@ footer {
 
 <script>
 const images = [
-  "images/img1.JPG",
-  "images/img2.JPG",
-  "images/img3.JPG",
-  "images/img4.JPG",
-  "images/img5.JPG",
-  "images/img6.JPG"
+  "images/img1.jpg",
+  "images/img2.jpg",
+  "images/img3.jpg",
+  "images/img4.jpg",
+  "images/img5.jpg",
+  "images/img6.jpg"
 ];
 
 const random = images[Math.floor(Math.random() * images.length)];
