@@ -88,7 +88,14 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .side { display: none; }
+  .side {
+    display: block;
+    font-size: 12px;
+    left: 5px;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); /* keep rotation */
+  }
 }
 
     footer {
