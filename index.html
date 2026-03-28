@@ -63,6 +63,34 @@ footer {
       display: block;
     }
 
+.side {
+  position: fixed;
+  font-size: 14px;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.side.right {
+  right: -130px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.side.left {
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  font-size: 16px;
+}
+
+@media (max-width: 700px) {
+  .side { display: none; }
+}
+
     footer {
         bottom: 10px;
        padding: 0px;
@@ -91,15 +119,13 @@ footer {
   <h1>kaysl</h1>
 </header>
 
-<section class="intro">
-    <p>
-    Visual creator based in Switzerland.<br>
-    Art direction, graphic design and illustration.<br>
-    Currently juggling life-work balance with two young toddlers, my hands are full.<br>
-    But my fingers are itching for a next new challenge!<br>
-    <a href="mailto:contact@kaysl.ch">Get in touch!</a><br>
-    </p>
-</section>
+<div class="side left">Visual creator based in Switzerland</div>
+<div class="side right">Art direction, graphic design & illustration</div>
+
+
+
+
+
 
 <footer>
   
