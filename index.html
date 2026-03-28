@@ -64,37 +64,38 @@ footer {
     }
 
 .side {
-    display: block;          /* show text */
-    position: fixed;         /* fixed like desktop */
-    transform: none;         /* no rotation */
-    font-size: 12px;         /* smaller for mobile */
-    z-index: 10;
-    white-space: normal;     /* allow wrapping if needed */
-  }
+  position: fixed;
+  font-size: 16px;
+  z-index: 10;
+  white-space: nowrap;
+}
 
-  .side.left {
-    left: 5px;               /* close to left edge */
-    top: 50%;                /* vertically center */
-    transform: translateY(-50%); /* center properly */
-    text-align: left;
-  }
+.side.left {
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center center;
+  text-align: left;
+}
 
-  .side.right {
-    right: 5px;              /* close to right edge */
-    top: 50%;                /* vertically center */
-    transform: translateY(-50%);
-    text-align: right;
-  }
+.side.right {
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center center;
+  text-align: right;
+}
 
+/* Mobile: readable, horizontally aligned, centered vertically */
 @media (max-width: 700px) {
   .side {
-    display: block;
+    transform: translateY(-50%) rotate(0deg); /* remove rotation */
     font-size: 12px;
-    left: 5px;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg); /* keep rotation */
+    white-space: normal;
   }
+  
+  .side.left { left: 5px; right: auto; top: 50%; }
+  .side.right { right: 5px; left: auto; top: 50%; }
 }
 
     footer {
