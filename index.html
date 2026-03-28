@@ -16,6 +16,10 @@
        background-position: center;
        background-repeat: no-repeat;
        background-attachment: fixed;
+
+
+      opacity: 0;
+  transition: opacity 0.6s ease;
     }
 
     header {
@@ -75,7 +79,7 @@
 
 
 <body>
-    
+
 <header>
   <h1>kaysl</h1>
 </header>
@@ -100,16 +104,23 @@
 
 <script>
 const images = [
-  "images/img1.JPG",
-  "images/img2.JPG",
-  "images/img3.JPG",
-  "images/img4.JPG",
-  "images/img5.JPG",
-  "images/img6.JPG"
+  "images/img1.jpg",
+  "images/img2.jpg",
+  "images/img3.jpg",
+  "images/img4.jpg",
+  "images/img5.jpg",
+  "images/img6.jpg"
 ];
 
 const random = images[Math.floor(Math.random() * images.length)];
-document.body.style.backgroundImage = `url(${random})`;
+
+const img = new Image();
+img.src = random;
+
+img.onload = function() {
+  document.body.style.backgroundImage = `url(${random})`;
+  document.body.style.opacity = "1";
+};
 </script>
 
 
