@@ -64,27 +64,27 @@ footer {
     }
 
 .side {
-  position: fixed;
-  font-size: 14px;
-  z-index: 10;
-  white-space: nowrap;
-}
+    display: block;          /* show text */
+    position: fixed;         /* fixed like desktop */
+    transform: none;         /* no rotation */
+    font-size: 12px;         /* smaller for mobile */
+    z-index: 10;
+    white-space: normal;     /* allow wrapping if needed */
+  }
 
-.side.right {
-  right: -130px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  transform-origin: center center;
-  font-size: 16px;
-  padding: 10px;
-}
+  .side.left {
+    left: 5px;               /* close to left edge */
+    top: 50%;                /* vertically center */
+    transform: translateY(-50%); /* center properly */
+    text-align: left;
+  }
 
-.side.left {
-  left: -100px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  transform-origin: center center;
-  font-size: 16px;
+  .side.right {
+    right: 5px;              /* close to right edge */
+    top: 50%;                /* vertically center */
+    transform: translateY(-50%);
+    text-align: right;
+  }
 }
 
 @media (max-width: 700px) {
