@@ -163,15 +163,26 @@ const images = [
   "images/img6.JPG"
 ];
 
-const random = images[Math.floor(Math.random() * images.length)];
+// Function to pick a random image
+function setRandomBackground() {
+  const random = images[Math.floor(Math.random() * images.length)];
+  const img = new Image();
+  img.src = random;
+  
+  // Only change background when fully loaded
+  img.onload = function() {
+    document.body.style.backgroundImage = `url(${random})`;
+    document.body.style.opacity = "1"; // keeps fade-in effect
+  }
+}
 
-const img = new Image();
-img.src = random;
+// Initial background
+setRandomBackground();
 
-img.onload = function() {
-  document.body.style.backgroundImage = `url(${random})`;
-  document.body.style.opacity = "1";
-};
+// Change every 2–3 seconds (2000–3000ms)
+setInterval(() => {
+  setRandomBackground();
+}, 1700); // 2500ms = 2.5s, you can adjust between 2000-3000
 </script>
 
 
