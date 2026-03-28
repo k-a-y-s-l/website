@@ -9,8 +9,13 @@
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
-      color: #111;
+      color: #000000;
       line-height: 1.5;
+
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
     }
 
     header {
@@ -19,14 +24,16 @@
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 30px;
       font-weight: normal;
       margin: 0;
     }
 
     .intro {
-      padding: 0 10px 10px;
-      max-width: 600px;
+        padding: 60px 10px 10px;
+        max-width: 600px;
+        z-index: 10;
+        color: rgb(0, 0, 0);
     }
 
     .grid {
@@ -42,9 +49,13 @@
     }
 
     footer {
-      padding: 10px 10px;
-      font-size: 14px;
-      position: absolute;
+       position: fixed; 
+       bottom: 0;
+       left: 0;
+       width: 100%;
+       padding: 0 10px 0px;
+      font-size: 16px;
+      z-index: 10;
     }
 
     a {
@@ -57,40 +68,50 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+   
   </style>
 </head>
 
-<body>
 
+
+<body>
+    
 <header>
   <h1>kaysl</h1>
 </header>
 
-
-<section class="grid">
-  <img src="images/img6.jpg" />
-  <img src="images/img2.jpg" />
-  <img src="images/img1.jpg" />
-  <img src="images/img3.jpg" />
-  <img src="images/img4.jpg" />
-  <img src="images/img5.jpg" /> 
-</section>
-
 <section class="intro">
-    <p>Visual creator based in Switzerland.<br>
+    <p>
+    Visual creator based in Switzerland.<br>
     Art direction, graphic design and illustration.<br>
-    Currently juggling life/work with two young toddlers, my hands are full.<br>
-    But I’m ready for an extra next challenge!<br>
-    <a href="mailto:contact@kaysl.ch">contact@kaysl.ch</a><br>   
-    <a href="https://www.instagram.com/_____kaysl_____">instagram</a><br>
-    076 521 30 77
+    Currently juggling life-work balance with two young toddlers, my hands are full.<br>
+    But my fingers are itching for a next new challenge!<br>
+    <a href="mailto:contact@kaysl.ch">Get in touch!</a><br>
     </p>
 </section>
 
 <footer>
-  <p> 
+  <p>
+    <a href="mailto:contact@kaysl.ch">contact@kaysl.ch</a>     —      
+    <a href="https://www.instagram.com/_____kaysl_____">instagram</a>     —      
+    076 521 30 77
   </p>
 </footer>
+
+<script>
+const images = [
+  "images/img1.jpg",
+  "images/img2.jpg",
+  "images/img3.jpg",
+  "images/img4.jpg",
+  "images/img5.jpg",
+  "images/img6.jpg"
+];
+
+const random = images[Math.floor(Math.random() * images.length)];
+document.body.style.backgroundImage = `url(${random})`;
+</script>
+
 
 </body>
 </html>
