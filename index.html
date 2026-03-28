@@ -88,7 +88,25 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .side { display: none; }
+  .side {
+    display: block;          /* show text on mobile */
+    font-size: 16px;         /* same as desktop */
+    white-space: normal;     /* wrap if needed */
+  }
+
+  .side.left {
+    left: -100px;               /* hug left edge */
+    top: 50%;                /* vertical center */
+    transform: translateY(-50%) rotate(-90deg); /* horizontal text */
+    text-align: left;
+  }
+
+  .side.right {
+    right: -130px;              /* hug right edge */
+    top: 50%;                /* vertical center */
+    transform: translateY(-50%) rotate(90deg); /* horizontal text */
+    text-align: right;
+  }
 }
 
     footer {
@@ -137,12 +155,12 @@ footer {
 
 <script>
 const images = [
-  "images/img1.jpg",
-  "images/img2.jpg",
-  "images/img3.jpg",
-  "images/img4.jpg",
-  "images/img5.jpg",
-  "images/img6.jpg"
+  "images/img1.JPG",
+  "images/img2.JPG",
+  "images/img3.JPG",
+  "images/img4.JPG",
+  "images/img5.JPG",
+  "images/img6.JPG"
 ];
 
 const random = images[Math.floor(Math.random() * images.length)];
